@@ -1,0 +1,26 @@
+*{
+    background-color:cyan;
+}
+
+footer{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    background-color: blue;
+}
+
+article h1{
+    background-color:pink;
+    text-align: center;
+    border: 1px solid black;
+}
+
+#about-you{
+    border: 1px solid black;
+}
+
+article{
+    display:flex;
+    align-items: center;
+}
