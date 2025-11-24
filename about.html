@@ -1,34 +1,297 @@
-<!-- About HTML by Joshua Ezekiel A. Agawin - November 21, 2025 -->
- 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>"About You" — The 1975</title>
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --accent:#6ee7b7;
+      --muted:#9aa4b2;
+      --glass: rgba(255,255,255,0.03);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg,#081021 0%, #071826 100%);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:24px;
+    }
+    .container{
+      max-width:1050px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns: 1fr 380px;
+      gap:22px;
+      align-items:start;
+    }
+    header{
+      grid-column:1/-1;
+      display:flex;
+      align-items:center;
+      gap:16px;
+      margin-bottom:6px;
+    }
+    header h1{
+      margin:0;
+      font-size:1.4rem;
+      letter-spacing: -0.02em;
+    }
+    header p{margin:0;color:var(--muted);font-size:0.95rem}
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:12px;
+      padding:14px;
+      box-shadow: 0 6px 24px rgba(2,6,23,0.6);
+      border: 1px solid rgba(255,255,255,0.03);
+    }
+
+    /* Left column */
+    .media{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+    .cover{
+      position:relative;
+      border-radius:10px;
+      overflow:hidden;
+      min-height:300px;
+      background: linear-gradient(90deg,#0c1220,#081029);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--muted);
+    }
+    .cover img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .cover .caption{
+      position:absolute;
+      left:12px;
+      bottom:12px;
+      background:var(--glass);
+      padding:8px 10px;
+      border-radius:8px;
+      font-size:0.9rem;
+      color:var(--muted);
+      backdrop-filter: blur(6px);
+    }
+
+    .video-wrap{
+      border-radius:10px;
+      overflow:hidden;
+    }
+    .video-wrap iframe{
+      width:100%;
+      height:420px;
+      border:0;
+      display:block;
+    }
+
+    /* Right column */
+    .sidebar{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .meta{
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+    .meta .thumb{
+      width:64px;
+      height:64px;
+      border-radius:8px;
+      overflow:hidden;
+      flex:0 0 64px;
+      background: #0b1220;
+    }
+    .meta .thumb img{width:100%;height:100%;object-fit:cover}
+    .meta .info{flex:1}
+    .meta .info h2{margin:0;font-size:1.05rem}
+    .meta .info small{color:var(--muted)}
+
+    .lyrics{
+      max-height:320px;
+      overflow:auto;
+      padding:12px;
+      line-height:1.55;
+      font-size:0.98rem;
+      border-radius:8px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.0));
+      border: 1px dashed rgba(255,255,255,0.02);
+    }
+    .lyrics .note{color:var(--muted);font-size:0.9rem;margin-bottom:8px}
+    .lyrics pre{
+      white-space:pre-wrap;
+      margin:0;
+      font-family:inherit;
+      color:#dff6e9;
+    }
+
+    .controls{
+      display:flex;
+      gap:10px;
+      margin-top:8px;
+    }
+    .btn{
+      background:transparent;
+      color:var(--accent);
+      border:1px solid rgba(110,231,183,0.18);
+      padding:8px 12px;
+      border-radius:8px;
+      cursor:pointer;
+      font-weight:600;
+    }
+
+    footer{
+      grid-column:1/-1;
+      margin-top:18px;
+      color:var(--muted);
+      font-size:0.9rem;
+      text-align:center;
+    }
+
+    /* Responsive */
+    @media (max-width:980px){
+      .container{grid-template-columns:1fr; padding:0 6px}
+      .video-wrap iframe{height:270px}
+    }
+  </style>
 </head>
 <body>
-    <main>
-        <article>
-    
-            <h1>About You | By The 1975!</h1>
-            <image src="https://www.gigwise.com/wp-content/uploads/2025/01/Aboutyou.png" width="300" id="about-you"></image>
-        </article>
-        <p>Hello!, this website is about creating a simple website and pairing with a partner to use Github</p>
-        
-        <div class="video-section">
-            <video width="400" controls>
-                <source src="aboutyou.mp4" type="video/mp4">
-            </video>
-        </div>
+  <div class="container">
+    <header>
+      <div style="width:72px;height:72px;border-radius:10px;overflow:hidden;background:#071025">
+        <img src="https://www.gigwise.com/wp-content/uploads/2025/01/Aboutyou.png" alt="The 1975 placeholder" style="width:100%;height:100%;object-fit:cover">
+      </div>
+      <div>
+        <h1>About You — The 1975</h1>
+        <p>A simple page showing an image, the official video embed area, and the lyrics panel.</p>
+      </div>
+    </header>
 
+    <!-- Left column: picture + video -->
+    <main class="card media">
+      <section class="cover" aria-label="cover image">
+        <img src="https://www.gigwise.com/wp-content/uploads/2025/01/Aboutyou.png" alt="Cover">
+      </section>
+
+      <section class="video-wrap">
+        <iframe id="ytplayer" src="aboutyou.mp4" title="About You — The 1975 (YouTube embed)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </section>
     </main>
+
+    <!-- Right column: meta + lyrics -->
+    <aside class="sidebar">
+      <div class="card meta">
+        <div class="thumb">
+          <img src="https://www.gigwise.com/wp-content/uploads/2025/01/Aboutyou.png" alt="Artist thumbnail">
+        </div>
+        <div class="info">
+          <h2>The 1975</h2>
+          <small>Song: "About You" — from the album (replace with correct album info)</small>
+        </div>
+      </div>
+
+      <div class="card lyrics">
+        
+        <strong>Song summary</strong>
+        <p style="margin-top:8px;margin-bottom:12px;color:#dfeff0">
+          "About You" by The 1975 is an atmospheric, emotional track that blends synth textures with introspective lyrics about longing and reflection, a soundscape that focuses on mood and intimate storytelling.
+        </p>
+
+        <strong>Lyrics</strong>
+        <pre id="lyrics-area" contenteditable="true" aria-label="Lyrics area">
+            <p>I know a place
+It's somewhere I go when I need to remember your face
+We get married in our heads
+Something to do whilst we try to recall how we met
+
+Do you think I have forgotten?
+Do you think I have forgotten?
+Do you think I have forgotten about you?
+
+You and I
+Were alive
+With nothing to do I could lay and just look in your eyes
+Wait and pretend
+Hold on and hope that we'll find our way back in the end
+
+Do you think I have forgotten?
+Do you think I have forgotten?
+Do you think I have forgotten about you?
+Do you think I have forgotten?
+Do you think I have forgotten?
+Do you think I have forgotten about you?
+
+There was something about you that now I can't remember
+It's the same damn thing that made my heart surrender
+And I'll miss you on a train
+I'll miss you in the morning
+I never know what to think about, so think about you
+(I think about you)
+About you
+Do you think I have forgotten about you?
+About you
+About you
+Do you think I have forgotten about you?
+            </p>
+        </pre>
+
+        <div class="controls" style="margin-top:12px">
+        </div>
+      </div>
+
+      <div class="card" style="color:var(--muted);font-size:0.95rem">
+        Credits<br>
+        • By Joshua Ezekiel A. Agawin.<br>
+        • Partnered with James Miro R. Orte
+      </div>
+    </aside>
+
+    <footer>
+        Made for Finals Activity 4: Github Collab for PELEC201.
+    </footer>
+  </div>
+
+  <script>
+    const lyricsArea = document.getElementById('lyrics-area');
+    function toggleLyricsEditable(){
+      const editable = lyricsArea.getAttribute('contenteditable') === 'true';
+      lyricsArea.setAttribute('contenteditable', (!editable).toString());
+      alert(editable ? 'Lyrics editing disabled.' : 'Lyrics area is now editable — paste lyrics you are allowed to display.');
+    }
+
+    function downloadLyrics(){
+      const text = lyricsArea.innerText.trim();
+      if(!text){
+        alert('No lyrics found in the text box to download.');
+        return;
+      }
+      const blob = new Blob([text], {type: 'text/plain;charset=utf-8'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'about-you-lyrics.txt';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    // Optional: helpful console reminder for the user
+    console.info('Reminder: replace "cover-placeholder.jpg" and "VIDEO_ID" in the iframe src with your own image and the actual YouTube video ID for "About You" by The 1975.');
+  </script>
 </body>
-
-
-
-<footer>
-    <p>By Joshua Ezekiel A. Agawin | Made on November 21, 2025 for Finals Activity 4 : GITHUB COLLAB (BY PAIR)</p>
-</footer>
 </html>
